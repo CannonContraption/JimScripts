@@ -1,0 +1,20 @@
+.TH SCREENLOCK.SH 1
+.SH NAME
+screenlock.sh \- lock the screen with a fancy background
+
+.SH SYNOPSIS
+screenlock.sh
+
+.SH DESCRIPTION
+.PP
+A screen lock script.
+
+Takes a screenshot, scales it down and back, blurs it, then checks the size of the current X display area then renders a logo for single or dual screen setups at the center of the screen. It then dithers the result to provide a "retro" look for whatever the result is.
+
+This resulting image is then fed to i3lock.
+
+.SH SEE ALSO
+convert(1), xrandr(1), i3lock(1), scrot(1), screenlock.sh(5)
+
+.SH AUTHOR
+Jim Read (jimmydean886@hotmail.com)

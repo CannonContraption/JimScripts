@@ -1,0 +1,21 @@
+#!/bin/bash
+echo "Turning md into html."
+echo "Please ensure that you have markdown installed."
+for i in $( ls ); do
+	if [[ $i == *.md ]]; then
+# 		echo "Found $i"
+		sedname=$(echo $i | sed s/md/html/)
+# 		echo $sedname
+		ls | grep style.css
+		if [ $? == 0 ]; then
+#             echo headers
+			echo "<html><head><link rel=stylesheet type=text/css href=style.css></head><body>" > "$sedname"
+		else
+#             echo "alt headers"
+			echo "<html><body>" > "$sedname"
+		fi
+		markdown "$i" >> "$sedname"
+		echo "</body></html>" >> "$sedname"
+		echo "$i >>> $sedname"
+	fi
+done

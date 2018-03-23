@@ -1,0 +1,23 @@
+#!/bin/bash
+ASSIGNMENT=${PWD##*/}
+
+echo "Getting $ASSIGNMENT ready."
+
+if [ $1 = "java" ]; then
+    rm -v *.class 2> /dev/null
+fi
+if [ $1 = "c" ]; then
+    rm -v *.o 2> /dev/null
+    rm -v *.out 2> /dev/null
+    for i in $(ls);
+    do
+        file $i | grep -o 'ELF' > /dev/null 2>&1 && rm -v $i
+    done
+fi
+
+if [ $1 != "noremove" ]; then
+    rm -v *.pdf 2> /dev/null
+    rm -v *~ 2> /dev/null
+fi
+cd ..
+zip -r "$ASSIGNMENT.zip" "$ASSIGNMENT"

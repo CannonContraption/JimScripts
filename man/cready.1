@@ -1,0 +1,26 @@
+.TH CREADY 1
+.SH NAME
+cready \- zip a directory and optionally remove test and compiled files.
+.SH SYNOPSIS
+.B cready
+.IR mode
+.SH DESCRIPTION
+cready is a script designed to compress and ready school assignments for a Java or C based class. It gets rid of .class or ELF files as well as instructions stored in .pdf files and then zips the directory for sending to a professor.
+
+cready can also be used to simply zip a directory, using the directory name as the zip name.
+.SH MODES
+.PP
+java
+        Removes .class files, .pdf files, and *.~.
+
+c
+        Removes .o files, .out files, and anything `file' defines as an ELF file as well as pdfs and *.~.
+
+noremove
+        Does not remove files, simply zips the current directory.
+
+.SH SEE ALSO
+zip(1), file(1)
+
+.SH AUTHOR
+Jim Read (jimmydean886@hotmail.com)
