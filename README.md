@@ -15,3 +15,6 @@ Runs i3lock with a blurred screenshot and a different image for dual and single 
 
 ### unzipall.sh
 Unzips all .zip files in a directory
+
+## Documentation
+See the man directory. From there, copy the files into your man search directory.
